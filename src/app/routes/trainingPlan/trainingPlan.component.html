@@ -1,0 +1,93 @@
+<nz-card [nzBordered]="false">
+  <form nz-form [nzLayout]="'inline'">
+    <standard-form-row block style="padding-bottom: 11px;">
+      <nz-form-item>
+        <nz-form-control>
+          <tag-select>
+            <nz-tag *ngFor="let i of categories; let idx = index" nzMode="checkable" [nzChecked]="i.value" (nzCheckedChange)="changeCategory($event, idx)">
+              {{i.text}}
+            </nz-tag>
+          </tag-select>
+        </nz-form-control>
+        <nz-input-group nzSuffixIcon="anticon anticon-search" style="width: 270px;">
+          <input type="text" nz-input placeholder="请输入" [(ngModel)]="q.q" name="q">
+        </nz-input-group>
+      </nz-form-item>
+    </standard-form-row>
+  </form>
+</nz-card>
+<div>
+  <div nz-col nzSpan="24">
+    <div nz-row>
+        <div nz-col nzSpan="2">
+            <nz-card [nzBordered]="false">
+              JAN
+              </nz-card>
+          </div>
+          <div nz-col nzSpan="22">
+            <nz-list [nzLoading]="loading" [nzRenderItem]="item" [nzDataSource]="list" [nzGrid]="{gutter: 24, lg: 6, md: 8, sm: 12, xs: 24 }" [nzPagination]="pagination">
+              <ng-template #item let-item>
+                <nz-list-item>
+                  <nz-card nzHoverable routerLink="/detail">
+                    <nz-card-meta [nzTitle]="nzTitle" [nzDescription]="item.subDescription">
+                    </nz-card-meta>
+                    <div class="card-item-content">
+                      <i class="anticon anticon-user"></i>
+                      <span>trainer name</span>
+                    </div>
+                    <div class="card-item-content">
+                      <i class="anticon anticon-calendar"></i>
+                      <span>5/24/2018 12:00-13:00</span>
+                    </div>
+                    <div class="card-item-content">
+                      <i class="anticon anticon-environment-o"></i>
+                      <span>#29 1T001</span>
+                    </div>
+                    <div class="card-item-content">
+                        <i class="anticon anticon-bell"></i>
+                        <span>Completed</span>
+                      </div>
+                  </nz-card>
+                </nz-list-item>
+              </ng-template>
+            </nz-list>
+          </div>
+    </div>
+    <div nz-col nzSpan="24">
+      <div nz-row>
+        <div nz-col nzSpan="2">
+            <nz-card [nzBordered]="false">
+              FEB
+            </nz-card>
+        </div>
+        <div nz-col nzSpan="22">
+          <nz-list [nzLoading]="loading" [nzRenderItem]="item" [nzDataSource]="list" [nzGrid]="{gutter: 24, lg: 6, md: 8, sm: 12, xs: 24 }" [nzPagination]="pagination">
+            <ng-template #item let-item>
+              <nz-list-item>
+                <nz-card nzHoverable routerLink="/detail">
+                  <nz-card-meta [nzTitle]="nzTitle" [nzDescription]="item.subDescription">
+                  </nz-card-meta>
+                  <div class="card-item-content">
+                    <i class="anticon anticon-user"></i>
+                    <span>trainer name</span>
+                  </div>
+                  <div class="card-item-content">
+                    <i class="anticon anticon-calendar"></i>
+                    <span>5/24/2018 12:00-13:00</span>
+                  </div>
+                  <div class="card-item-content">
+                    <i class="anticon anticon-environment-o"></i>
+                    <span>#29 1T001</span>
+                  </div>
+                  <div class="card-item-content">
+                      <i class="anticon anticon-bell"></i>
+                      <span>Completed</span>
+                    </div>
+                </nz-card>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </div>
+    </div>
+
+</div>
