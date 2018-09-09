@@ -19,6 +19,8 @@ import { Exception404Component } from './exception/404.component';
 import { Exception500Component } from './exception/500.component';
 // trainee page
 import { TraineeComponent } from './trainee/trainee.component';
+// trainingPlan page
+import { TrainingPlanComponent } from './trainingPlan/trainingPlan.component';
 // detail page
 import { DetailComponent } from './detail/detail.component';
 
@@ -39,6 +41,8 @@ const COMPONENTS = [
   Exception500Component,
   // trainee page
   TraineeComponent,
+  // trainingPlan page
+  TrainingPlanComponent,
   // detail page
   DetailComponent,
 ];

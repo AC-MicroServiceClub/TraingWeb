@@ -22,6 +22,12 @@
           "icon": "icon-speedometer"
         },
         {
+          "text": "TrainingPlan",
+          "link": "/trainingPlan",
+          "i18n": "TrainingPlan",
+          "icon": "icon-speedometer"
+        },
+        {
           "text": "仪表盘",
           "i18n": "dashboard",
           "icon": "icon-speedometer",

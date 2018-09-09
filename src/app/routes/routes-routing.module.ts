@@ -22,6 +22,8 @@ import { Exception404Component } from './exception/404.component';
 import { Exception500Component } from './exception/500.component';
 // trainee page
 import { TraineeComponent } from './trainee/trainee.component';
+// trainingPlan page
+import { TrainingPlanComponent } from './trainingPlan/trainingPlan.component';
 // detail page
 import { DetailComponent } from './detail/detail.component';
 
@@ -45,6 +47,7 @@ const routes: Routes = [
       { path: 'extras', loadChildren: './extras/extras.module#ExtrasModule' },
       { path: 'pro', loadChildren: './pro/pro.module#ProModule' },
       { path: 'trainee', component: TraineeComponent },
+      { path: 'trainingPlan', component: TrainingPlanComponent },
       { path: 'detail', component: DetailComponent },
     ],
   },
