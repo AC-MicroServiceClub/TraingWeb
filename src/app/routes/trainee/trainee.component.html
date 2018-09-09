@@ -1,17 +1,18 @@
+<page-header [title]="'培训列表'"></page-header>
 <nz-card [nzBordered]="false">
   <form nz-form [nzLayout]="'inline'">
-    <standard-form-row block style="padding-bottom: 11px;">
+    <standard-form-row grid last>
       <nz-form-item>
         <nz-form-control>
-          <tag-select>
+          <tag-select expandable="false" style="display: inline;">
             <nz-tag *ngFor="let i of categories; let idx = index" nzMode="checkable" [nzChecked]="i.value" (nzCheckedChange)="changeCategory($event, idx)">
               {{i.text}}
             </nz-tag>
           </tag-select>
+          <nz-input-group nzSuffixIcon="anticon anticon-search" style="width: 270px;">
+            <input type="text" nz-input placeholder="请输入" [(ngModel)]="q.q" name="q">
+          </nz-input-group>
         </nz-form-control>
-        <nz-input-group nzSuffixIcon="anticon anticon-search" style="width: 270px;">
-          <input type="text" nz-input placeholder="请输入" [(ngModel)]="q.q" name="q">
-        </nz-input-group>
       </nz-form-item>
     </standard-form-row>
   </form>
@@ -20,7 +21,10 @@
   <ng-template #item let-item>
     <nz-list-item>
       <nz-card nzHoverable routerLink="/detail">
-        <nz-card-meta [nzTitle]="nzTitle" [nzDescription]="item.subDescription">
+        <nz-card-meta [nzTitle]="nzTitle" [nzDescription]="item.trainingTitle">
+          <ng-template #nzTitle>
+            <a>{{item.trainingTitle}}</a>
+          </ng-template>
         </nz-card-meta>
         <div class="card-item-content">
           <i class="anticon anticon-user"></i>
@@ -38,6 +42,6 @@
     </nz-list-item>
   </ng-template>
   <ng-template #pagination>
-    <nz-pagination [nzTotal]="50" [nzPageSize]="5" (nzPageIndexChange)="getData()"></nz-pagination>
+    <nz-pagination [nzTotal]="50" [nzPageSize]="5" (nzPageIndexChange)="getData()" class="text-center"></nz-pagination>
   </ng-template>
 </nz-list>

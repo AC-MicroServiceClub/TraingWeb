@@ -1,5 +1,4 @@
 <page-header [title]="'培训详情'"></page-header>
-
 <nz-card [nzHoverable]="true" [nzBordered]="false">
   <nz-row [nzGutter]="24">
     <nz-col [nzSpan]="4" class="text-center">
@@ -8,19 +7,15 @@
     </nz-col>
     <nz-col [nzSpan]="20">
       <desc-list size="large" title="Training Title" class="mb-lg">
-        <desc-list-item term="取货单号">1000000000</desc-list-item>
-        <desc-list-item term="状态">已取货</desc-list-item>
-        <desc-list-item term="销售单号">1234123421</desc-list-item>
-        <desc-list-item term="子订单">3214321432</desc-list-item>
+        <desc-list-item>1000000000</desc-list-item>
       </desc-list>
       <nz-divider class="mb-lg"></nz-divider>
       <desc-list size="large" title="Trainer" class="mb-lg">
-        <desc-list-item term="用户姓名">付小小</desc-list-item>
-        <desc-list-item term="联系电话">18100000000</desc-list-item>
-        <desc-list-item term="常用快递">菜鸟仓储</desc-list-item>
-        <desc-list-item term="取货地址">浙江省杭州市西湖区万塘路18号</desc-list-item>
-        <desc-list-item term="备注">无</desc-list-item>
+        <desc-list-item term="EID">XXX.XXX</desc-list-item>
+        <desc-list-item term="FROM IG">PRD</desc-list-item>
       </desc-list>
+      <button nz-button nzType="default" nzSize="large" style="margin-right: 20px;"><i class="anticon anticon-file-text"></i>Download Material</button>
+      <button nz-button nzType="default" nzSize="large"><i class="anticon anticon-video-camera"></i>Download Video</button>
     </nz-col>
   </nz-row>
 </nz-card>
