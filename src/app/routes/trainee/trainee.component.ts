@@ -39,10 +39,18 @@ export class TraineeComponent implements OnInit {
     this.getData();
   }
 
+  // getData() {
+  //   this.loading = true;
+  //   this.http.get('/api/list', { count: this.q.ps }).subscribe((res: any) => {
+  //     this.list = res;
+  //     this.loading = false;
+  //   });
+  // }
+
   getData() {
     this.loading = true;
-    this.http.get('/api/list', { count: this.q.ps }).subscribe((res: any) => {
-      this.list = this.list.concat(res);
+    this.http.post('training/history', { 'traineeId': '5000001' }, {}, {headers: {'Content-Type': 'application/json', 'token': 'testtoken'}}).subscribe((res: any) => {
+      this.list = res.trainingHistoryDetails;
       this.loading = false;
     });
   }
